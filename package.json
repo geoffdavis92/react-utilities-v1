@@ -16,10 +16,13 @@
     "babel-preset-react": "^6.5.0",
     "http-server": "^0.8.5",
     "webpack": "^1.12.13",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base . --history-api-fallback",
+    "release": "PROD_ENV=1 webpack",
+    "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --inline --hot --history-api-fallback",
+    "__start": "webpack-dev-server --inline --content-base . --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
