@@ -9,7 +9,7 @@ import MarkdownBlock, { MarkdownBlockDetails, MarkdownBlockExample1, MarkdownBlo
 import UtilityList from './utilities/list'
 import Article, { ArticleDetails, ArticleExample1 } from './utilities/Article'
 import ExternalLink from './utilities/ExternalLink'
-import CodeBlock from './utilities/CodeBlock'
+import CodeBlock, { CodeBlockDetails } from './utilities/CodeBlock'
 
 class App extends Component {
 	render() {
@@ -136,8 +136,12 @@ class App extends Component {
 						</ul>
 					</article>
 					<Article id="util-article" title="Article" component={ArticleDetails}>
-						<p><code>Article</code></p>
+						<p><code>Article</code> is a utility component to setup an article element with an ID and a title tag.
+						 It also allows for an optional <code>component</code> prop that, if an object is provided, reads the object
+						  and applies the values to a pre-determined component databox.</p>
 						{CodeBlock(ArticleExample1,`Composing an Article`)}
+					</Article>
+					<Article id="util-codeblock" title="CodeBlock" component={CodeBlockDetails}>
 					</Article>
 				</section>
 			</main>
